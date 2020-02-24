@@ -37,6 +37,7 @@ class CelebA(object):
         self.num_vals = len(self.val_data)
         print('Load {} dataset SUCCESS!'.format(self.dataset_name))
 
+
     def train_next_batch(self, batch_size):
         batch_paths = np.random.choice(self.train_data, batch_size, replace=False)
         batch_imgs = [utils.load_data(batch_path, input_height=self.input_height, input_width=self.input_width)
@@ -103,4 +104,9 @@ def Dataset(flags, dataset_name):
         return SVHN(flags, dataset_name)
     else:
         raise NotImplementedError
+
+
+
+
+
 
